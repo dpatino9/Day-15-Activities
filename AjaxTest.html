@@ -1,0 +1,27 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div class=Release></div>
+	<div class=Year></div>
+<script src='http://code.jquery.com/jquery-2.1.3.min.js'></script>
+<script type="text/javascript">
+	var title = 'Neverending+Story';
+	var queryURL = "http://www.omdbapi.com/?t=" + title + "&y=&plot=short&r=json";
+
+	$.ajax({url: queryURL, method: 'GET'}).done(function(data) {
+	     console.log(data);
+
+	     console.log(data.Released)
+	     $('.Release').html(data.Released);
+
+	     console.log(data.Year);
+	     $('.Year').html(data.Year);
+	}); 
+
+</script>
+
+
+</body>
+</html>
